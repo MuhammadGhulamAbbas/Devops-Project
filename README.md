@@ -126,7 +126,7 @@ Project/
 
 ## 📊 Live Dashboard Example (Metabase)
 
-- **URL:** `https://bi.nendo.fun`
+- **URL:** `https://metabase.nendo.fun`
 - **Data Source:** PostgreSQL RDS
 - **Dashboard Features:**
   - Line charts, bar charts, tables
