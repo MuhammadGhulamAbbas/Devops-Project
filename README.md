@@ -53,24 +53,43 @@ The infrastructure is broken down into modular Terraform components for reusabil
 
 Project/
 ├── main.tf # Root Terraform file importing all modules
+
 ├── providers.tf # AWS provider and region configuration
+
 ├── variables.tf # Input variable declarations
+
 ├── terraform.tfvars # Input values (domain, RDS creds, certs)
+
 ├── outputs.tf # Outputs like ALB DNS names, DB endpoints
+
 ├── README.md # This documentation file
+
 ├── modules/ # Modularized Terraform resources
+
 │ ├── network/ # VPC, subnets, internet gateway, routing
+
 │ ├── security_groups/ # Ingress/egress rules for EC2, RDS, ALB
+
 │ ├── ec2/ # Auto Scaling Group for app servers
+
 │ ├── ec2-bi/ # EC2 instance for Metabase BI tool
+
 │ ├── rds/ # MySQL & PostgreSQL databases in private subnets
-│ ├── alb/ # ALB for frontend/backend services
+
+│ ├── alb/ # ALB 
+
 │ ├── alb-bi/ # ALB for Metabase BI instance
+
 │ ├── target_group/ # ALB target groups for EC2 routing
+
 │ └── route53/ # DNS records for application & BI tool
+
 ├── userdata/ # Bash scripts for EC2 initialization
+
 │ ├── userdata-app.sh # Installs Docker, NGINX, Node.js, and apps
+
 │ └── userdata-bi.sh # Installs and runs Metabase in Docker
+
 ├── docker/ # (Optional) Dockerfiles or Compose configs
 
 
