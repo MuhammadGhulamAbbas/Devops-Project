@@ -103,8 +103,7 @@ Project/
   - **Docker**
   - **Node.js 20**
 - Each instance runs:
-  - A **React frontend** container on port `80`
-  - A **Node.js backend API** container on port `3000`
+
 - Instances scale automatically based on demand and health checks.
 
 ### 2. 🗄️ RDS Databases (MySQL & PostgreSQL)
@@ -116,7 +115,7 @@ Project/
 ### 3. 🌐 Application Load Balancer (ALB)
 - Two ALBs are provisioned:
   - `application.nendo.fun` – for React/Node.js app
-  - `bi.nendo.fun` – for Metabase
+  - `metabase.nendo.fun` – for Metabase
 - Listeners:
   - **HTTP listener** redirects traffic to HTTPS
   - **HTTPS listener** with **ACM SSL certificates**
@@ -124,7 +123,7 @@ Project/
 
 ### 4. 📊 Business Intelligence with Metabase
 - A dedicated EC2 instance runs **Metabase** inside a Docker container.
-- Accessible via: [`https://bi.nendo.fun`](https://bi.nendo.fun)
+- Accessible via: [`https://metabase.nendo.fun`](https://bi.nendo.fun)
 - Connects securely to **PostgreSQL** hosted in a private subnet.
 - Visualizes **real-time sales data** using dashboards and charts.
 
